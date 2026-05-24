@@ -1,0 +1,231 @@
+/* ===== ROOT VARIABLES ===== */
+:root {
+  --bg-main: #111b21;
+  --bg-card: #1f2c34;
+  --bg-button: #2a3942;
+  --bg-operator: #374a56;
+  --accent: #00a884;
+  --accent-dark: #008f6e;
+  --text-primary: #e9edef;
+  --text-secondary: #8696a0;
+  --danger: #ef5350;
+  --border: #2a3942;
+  --shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+
+/* ===== RESET & BASE ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* ===== TITLE ===== */
+.main-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 28px;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+/* ===== DASHBOARD GRID ===== */
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  width: 100%;
+  max-width: 780px;
+}
+
+/* ===== CARD ===== */
+.card {
+  background-color: var(--bg-card);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.card h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 16px;
+  text-align: center;
+  letter-spacing: 0.4px;
+}
+
+/* ===== CALCULATOR DISPLAY ===== */
+.display {
+  background-color: var(--bg-main);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-size: 1.8rem;
+  text-align: right;
+  color: var(--text-primary);
+  word-break: break-all;
+  min-height: 60px;
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+}
+
+/* ===== BUTTON GRID ===== */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+/* ===== GENERAL BUTTON ===== */
+.btn {
+  background-color: var(--bg-button);
+  color: var(--text-primary);
+  border: none;
+  border-radius: 10px;
+  padding: 16px 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+  user-select: none;
+}
+
+.btn:hover {
+  background-color: #3a4f5c;
+  transform: scale(1.04);
+}
+
+.btn:active {
+  transform: scale(0.97);
+  background-color: #2a3942;
+}
+
+/* ===== OPERATOR BUTTONS ===== */
+.btn.operator {
+  background-color: var(--bg-operator);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.btn.operator:hover {
+  background-color: #455e6e;
+}
+
+/* ===== CLEAR BUTTON ===== */
+.btn.clear {
+  background-color: var(--danger);
+  color: #fff;
+  font-weight: 700;
+}
+
+.btn.clear:hover {
+  background-color: #c62828;
+}
+
+/* ===== EQUALS BUTTON ===== */
+.btn.equals {
+  background-color: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.btn.equals:hover {
+  background-color: var(--accent-dark);
+}
+
+/* ===== ZERO BUTTON (SPANS 2 COLS) ===== */
+.btn.zero {
+  grid-column: span 2;
+}
+
+/* ===== COUNTER DISPLAY ===== */
+.count-display {
+  background-color: var(--bg-main);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 4rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 32px 16px;
+  color: var(--accent);
+  margin-bottom: 24px;
+  letter-spacing: 2px;
+}
+
+/* ===== COUNTER BUTTONS ===== */
+.counter-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn.increment {
+  background-color: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 14px;
+}
+
+.btn.increment:hover {
+  background-color: var(--accent-dark);
+}
+
+.btn.decrement {
+  background-color: var(--danger);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 14px;
+}
+
+.btn.decrement:hover {
+  background-color: #c62828;
+}
+
+.btn.reset-btn {
+  background-color: var(--bg-operator);
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 14px;
+}
+
+.btn.reset-btn:hover {
+  background-color: #455e6e;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 620px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .main-title {
+    font-size: 1.3rem;
+  }
+
+  .display {
+    font-size: 1.4rem;
+  }
+
+  .count-display {
+    font-size: 3rem;
+  }
+}
